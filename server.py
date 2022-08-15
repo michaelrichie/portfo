@@ -56,9 +56,7 @@ def html_page(page_name):
 def send_email1(data):
     me = 'richiekazu@gmail.com'
     password = 'teezkcylpsoiettm'
-    #server = 'smtp.gmail.com:587'
-    you = 'michaelrichierr7gmail.com'
-
+    #server = 'smtp.gmail.com:587
     # =============================================================================
     # SET THE INFO ABOUT THE SAID EMAIL
     # =============================================================================
@@ -66,7 +64,8 @@ def send_email1(data):
     sent_to = 'richiekazu@gmail.com'
     sent_subject = data["subject"]
     who=data["email"]
-    sent_body = data["message"]
+    mess=data["message"]
+    sent_body = (f"from {who},\n{mess} \n")
 
 
     email_text = """\
@@ -75,7 +74,7 @@ def send_email1(data):
     Subject: %s
 
     %s
-    """ % (me, ", ".join(sent_to), sent_subject, who, sent_body)
+    """ % (me, ", ".join(sent_to), sent_subject, sent_body)
 
     # =============================================================================
     # SEND EMAIL OR DIE TRYING!!!
